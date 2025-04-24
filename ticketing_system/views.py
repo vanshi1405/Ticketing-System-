@@ -6,8 +6,8 @@ from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 
-from ticketing_system.models import Ticket
-from ticketing_system.serializers import UserSerializers, TicketSerializers
+from ticketing_system.models import Ticket, Project
+from ticketing_system.serializers import UserSerializers, TicketSerializers, ProjectSerializer
 
 
 class DashBoardViewSet(viewsets.ViewSet):
@@ -37,4 +37,9 @@ class UserViewset(viewsets.ModelViewSet):
 class TicketViewset(viewsets.ModelViewSet):
     queryset = Ticket.objects.all()
     serializer_class = TicketSerializers
+    # permission_classes = [IsAuthenticated]
+
+class ProjectViewset(viewsets.ModelViewSet):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
     # permission_classes = [IsAuthenticated]

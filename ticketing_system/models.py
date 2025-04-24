@@ -27,7 +27,7 @@ class Ticket(CommonFields):
 
 class Project(CommonFields):
     status = models.PositiveIntegerField(choices=TicketStausEnum.choices, default=TicketStausEnum.DRAFT)
-    assigned_to = models.ManyToManyField(User,through='LinkingUserToProject',related_name='assigned_projects')
+    # assigned_to = models.ManyToManyField(User,through='LinkingUserToProject',related_name='assigned_projects')
 
 
 class LinkingUserToProject(models.Model):

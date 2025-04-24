@@ -28,6 +28,7 @@ router = DefaultRouter()
 router.register(prefix=r'users', viewset=UserViewset, basename='users')
 router.register(prefix=r'dashboard', viewset=DashBoardViewSet, basename='dashboard')
 router.register(prefix=r'ticket', viewset=TicketViewset, basename='ticket')
+router.register(prefix=r'projects', viewset=ProjectViewset, basename='projects')
 
 urlpatterns = [
     path('ticketing_sys/', include(router.urls)),
